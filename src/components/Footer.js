@@ -8,21 +8,22 @@ function Footer () {
 return(
     <div>
        
-       <footer className="site-footer">
+       <footer className="site-footer fixed-bottom">
 
 <div className="row">
     <div className="col-md-8 col-lg-9">
-        <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-        <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-        <a href="#"><FontAwesomeIcon icon={faYoutube} /></a>
+        <span className="padding-footer"><a href="#"><FontAwesomeIcon icon={faInstagram} /></a></span>
+        <span className="padding-footer"><a href="#"><FontAwesomeIcon icon={faYoutube} /></a></span>
+        <span className="padding-footer"><a href="#"><FontAwesomeIcon icon={faTwitter} /></a></span>
+        
 
     </div>
     <div className="col-md-4 col-lg-3">
-    <FontAwesomeIcon icon={faCcAmex} />
-    <FontAwesomeIcon icon={faCcDiscover} />
-    <FontAwesomeIcon icon={faPaypal} />
-    <FontAwesomeIcon icon={faCcMastercard} />
-    <FontAwesomeIcon icon={faCcVisa} />
+    <span className="padding-footer"> <FontAwesomeIcon icon={faPaypal} /></span>
+    <span className="padding-footer"><FontAwesomeIcon icon={faCcAmex}/></span>
+    <span className="padding-footer"><FontAwesomeIcon icon={faCcDiscover} /></span>
+    <span className="padding-footer"><FontAwesomeIcon icon={faCcMastercard} /></span>
+    <span className="padding-footer"><FontAwesomeIcon icon={faCcVisa} /></span>
     </div>
 
 </div>

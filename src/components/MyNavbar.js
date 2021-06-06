@@ -14,16 +14,18 @@ import {
   DropdownItem,
   NavbarText,
   InputGroup,
-  Input
+  Input,
 } from "reactstrap";
 
-import { faSquare, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
+import { faSquare, faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./MyNavBar.css";
 
 const rightSideNavbar = {
-  marginLeft: 'auto'
-}
-
+  marginLeft: "auto",
+};
 
 const MyNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,24 +66,29 @@ const MyNavbar = (props) => {
               <NavLink href="/contact">Contact</NavLink>
             </NavItem>
           </Nav>
-          
-            <Button style={rightSideNavbar}>Login</Button>
-            <span>&nbsp;&nbsp;</span>
-            <NavbarText>
-             
-              <InputGroup >
-                <Input placeholder="Search" />
-              </InputGroup>
-              
-            </NavbarText>
+
+          <Button style={rightSideNavbar}>Login</Button>
          
-            <div>
-              hello
-            <FontAwesomeIcon icon={faSquare} /></div>
-        <div >
-        <FontAwesomeIcon icon={faSearch} /> hello</div>
+          <span>&nbsp;&nbsp;</span>
+          <NavbarText>
+            <InputGroup>
+              <Input placeholder="Search" />
+            </InputGroup>
+          </NavbarText>
+
+
+         
+
+
+
+
+          <div>
+            <FontAwesomeIcon icon={faSquare} />
+          </div>
+          <div className="icons">
+          <button class="btn btn-dark my-2 my-sm-0" type="submit"><FontAwesomeIcon icon={faSearch} /> </button> <button class="btn btn-dark my-2 my-sm-0" type="submit"><FontAwesomeIcon icon={faShoppingCart} /> </button>
+          </div>
         </Collapse>
-       
       </Navbar>
     </div>
   );

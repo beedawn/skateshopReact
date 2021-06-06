@@ -1,9 +1,9 @@
 .site-footer{
-    position:absolute;
-    padding:2rem;
+
+    padding:1rem;
     background-color: #cdcdce;
     font-size:2rem;
-    bottom:0px;
+
     width:100%;
     z-index:2;
 }
@@ -15,5 +15,9 @@
 }
 
 #copyright{
-    font-size:.75rem;
+    font-size:.6rem;
+}
+
+.padding-footer{
+    padding:0 .25rem;
 }
