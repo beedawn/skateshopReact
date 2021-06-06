@@ -16,7 +16,9 @@ import {
   InputGroup,
   Input
 } from "reactstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faSquare, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const rightSideNavbar = {
   marginLeft: 'auto'
@@ -56,10 +58,10 @@ const MyNavbar = (props) => {
             </UncontrolledDropdown>
 
             <NavItem>
-              <NavLink href="/">About</NavLink>
+              <NavLink href="/about">About</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/">Contact</NavLink>
+              <NavLink href="/contact">Contact</NavLink>
             </NavItem>
           </Nav>
           
@@ -74,9 +76,10 @@ const MyNavbar = (props) => {
             </NavbarText>
          
             <div>
-            <FontAwesomeIcon icon="square" /></div>
+              hello
+            <FontAwesomeIcon icon={faSquare} /></div>
         <div >
-        <FontAwesomeIcon icon="fa-search"/></div>
+        <FontAwesomeIcon icon={faSearch} /> hello</div>
         </Collapse>
        
       </Navbar>

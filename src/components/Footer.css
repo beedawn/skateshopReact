@@ -1,0 +1,19 @@
+.site-footer{
+    position:absolute;
+    padding:2rem;
+    background-color: #cdcdce;
+    font-size:2rem;
+    bottom:0px;
+    width:100%;
+    z-index:2;
+}
+.site-footer a{
+    color:black;
+}
+.site-footer a:hover{
+    color:grey;
+}
+
+#copyright{
+    font-size:.75rem;
+}

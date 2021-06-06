@@ -7,8 +7,10 @@ import {
   CarouselCaption
 } from 'reactstrap';
 
-import Image2 from '../imgs/mateo-avila-chinchilla-Yt2bU-A088w-unsplash.jpg';
+import "./MyCarousel.css";
+
 import Image1 from '../imgs/jared-tomasek-_j65wtWbMbs-unsplash.jpg';
+import Image2 from '../imgs/mateo-avila-chinchilla-Yt2bU-A088w-unsplash.jpg';
 import Image3 from '../imgs/izzy-park-ETqZh_Oe5iE-unsplash.jpg';
 
 
@@ -69,7 +71,7 @@ const MyCarousel = (props) => {
   return (
       <div>
               
-        <div className="col-sm-8 col-md-6 col-lg-5 col-xl-3 carousel-overlay">
+        <div className="col-sm-8 col-md-6 col-lg-5 col-xl-3 carousel-overlay logo-bob">
             <h2> Bob's Skateshop</h2>
         
     </div>
