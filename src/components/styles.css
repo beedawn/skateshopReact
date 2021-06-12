@@ -1,0 +1,161 @@
+
+
+.carousel-overlay {
+    font-family: 'Major Mono Display', monospace;
+    background-color:rgba(0,0,0,0.5);
+    margin:2rem;
+    margin-top: 15rem;
+    padding:2rem;
+    position: absolute;
+    z-index:100;
+    color:white;
+}
+  
+
+
+.carousel-img-control{
+    object-position: 50% 30%;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.carousel-img-control2{
+    object-position: 50% 40%;
+    height: 25rem;
+    object-fit: cover;
+}
+
+
+.featured-thumbnail{
+    
+    width:12.75rem;
+    height:12.75rem;
+    
+    object-fit:cover;
+    padding:.25rem .25rem;
+    margin:0;
+}
+.product-col{
+padding:0;
+}
+
+.site-footer{
+    
+    padding:2rem;
+    background-color: #cdcdce;
+    font-size:2rem;
+    
+}
+.site-footer a{
+    color:black;
+}
+.site-footer a:hover{
+    color:grey;
+}
+
+#copyright{
+    font-size:.75rem;
+}
+
+.content{
+    padding-top:2rem;
+    padding-bottom:8rem;
+    padding-left:.5rem;
+}
+
+.content a:hover{
+    opacity:0.5;
+    transition: opacity 0.3s, visibility 0.5s;
+}
+
+.shopping-cart a{
+    color:white;
+    font-size:1.25rem;
+
+}
+       
+
+.hours ul {
+    list-style-type: none;
+}
+
+
+.product-thumbnail{
+    
+    width:25rem;
+    height:25rem;
+    
+    object-fit:cover;
+    padding:.25rem .25rem;
+    margin:0;
+}
+
+.signup{
+    background-color:blue;
+    color:white;
+}
+
+.product-page-img{
+    width:100%;
+}
+
+.product-page-h3{
+    font-family: 'EB Garamond', serif;
+}
+
+.product-page-h4{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#shipping{
+    font-size:.8rem;
+    font-weight:bold;
+}
+
+.product-overlay{
+    
+    background-color:rgba(255,255,255,0.75);
+    
+    bottom: 5rem;
+    left: 6rem;
+    width: 20rem;
+    font-weight:bold;
+    font-size:1.5rem;
+    padding:.5rem;
+    position: relative;
+    z-index:100;
+    color:black;
+}
+.signUpModalClose{
+    color:white;
+}
+
+
+.product-overlay-price{
+    
+    background-color:rgba(209, 2, 2, 0.75);
+    
+    bottom: 35rem;
+    left: 1rem;
+    width: 20rem;
+    font-weight:bold;
+    font-size:1.5rem;
+    padding:1.25rem;
+    position: relative;
+    z-index:101;
+    color:white;
+   
+}
+
+.product-listing{
+    padding-bottom:7rem;
+    
+    
+    
+}
+
+.product-listing h4{
+    font-size:4rem;
+    padding-bottom:2.5rem;
+    
+}

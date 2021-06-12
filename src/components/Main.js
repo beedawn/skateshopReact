@@ -6,7 +6,9 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import ProductView from "./ProductView";
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+
 
 function Main() {
   return (
@@ -18,6 +20,9 @@ function Main() {
         <Route path="/home" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
+        <Route path="/:id" render={(props) => (<ProductView {...props} category={props.match.params.id} />
+        )} />
+         
         {/* <Route exact path='/directory' render={() => <Directory campsites={this.props.campsites} />} />
                      
                            <Route exact path='/contactus' render={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} feedback={postFeedback}/> } />

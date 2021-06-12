@@ -15,16 +15,23 @@ import {
   NavbarText,
   InputGroup,
   Input,
+  Form,
+  FormGroup
 } from "reactstrap";
 
-
-
-import { faSquare, faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSquare,
+  faSearch,
+  faShoppingCart,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./MyNavBar.css";
+import LoginModal from "./LoginModal";
+import CartModal from "./CartModal";
 
 const rightSideNavbar = {
   marginLeft: "auto",
+  bottom: "20rem",
 };
 
 const MyNavbar = (props) => {
@@ -33,8 +40,8 @@ const MyNavbar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" className="bg-dark p-2 sticky-top" dark expand="lg">
+    <div className="sticky-top">
+      <Navbar color="light" className="bg-dark p-2 " dark expand="lg">
         <NavbarBrand href="/">Bob's Skateshop</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -47,15 +54,15 @@ const MyNavbar = (props) => {
                 Products
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>Completes</DropdownItem>
-                <DropdownItem>Decks</DropdownItem>
-                <DropdownItem>Trucks</DropdownItem>
-                <DropdownItem>Wheels</DropdownItem>
-                <DropdownItem>Bearings</DropdownItem>
-                <DropdownItem>Accessories</DropdownItem>
+                <DropdownItem href="Completes">Completes</DropdownItem>
+                <DropdownItem href="Decks">Decks</DropdownItem>
+                <DropdownItem href="Trucks">Trucks</DropdownItem>
+                <DropdownItem href="Wheels">Wheels</DropdownItem>
+                <DropdownItem href="Bearings">Bearings</DropdownItem>
+                <DropdownItem href="Accessories">Accessories</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>Clothing</DropdownItem>
-                <DropdownItem>Shoes</DropdownItem>
+                <DropdownItem href="Clothing">Clothing</DropdownItem>
+                <DropdownItem href="Shoes">Shoes</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
 
@@ -67,26 +74,32 @@ const MyNavbar = (props) => {
             </NavItem>
           </Nav>
 
-          <Button style={rightSideNavbar}>Login</Button>
-         
+          <div style={rightSideNavbar}>
+            {" "}
+            <LoginModal buttonLabel="Login" title="Login" />
+          </div>
+
           <span>&nbsp;&nbsp;</span>
           <NavbarText>
+            <Form>
+              <FormGroup>
             <InputGroup>
               <Input placeholder="Search" />
+              <button class="btn btn-dark my-0 my-sm-0" type="submit">
+                <FontAwesomeIcon icon={faSearch} />
+              </button>
             </InputGroup>
+            </FormGroup>
+            </Form>
           </NavbarText>
-
-
-         
-
-
-
 
           <div>
             <FontAwesomeIcon icon={faSquare} />
           </div>
           <div className="icons">
-          <button class="btn btn-dark my-2 my-sm-0" type="submit"><FontAwesomeIcon icon={faSearch} /> </button> <button class="btn btn-dark my-2 my-sm-0" type="submit"><FontAwesomeIcon icon={faShoppingCart} /> </button>
+            <button class="btn btn-dark ml-0"><CartModal title="Shopping Cart" />
+              {" "}
+            </button>
           </div>
         </Collapse>
       </Navbar>
