@@ -244,10 +244,10 @@ const PRODUCTS = [
     },
     {
         id: 27,
-        name: "",
+        name: "pasta club",
         src:"",
-        price: 0,
-        category:"",
+        price: 420.69,
+        category:"longjohnsilvers",
         featured:"",
         description:""
     },

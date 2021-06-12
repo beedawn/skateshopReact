@@ -20,8 +20,9 @@ function Main() {
         <Route path="/home" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
-        <Route path="/:id" render={(props) => (<ProductView {...props} category={props.match.params.id} />
+        <Route path="/category/:id" render={(props) => (<ProductView {...props} category={props.match.params.id} />
         )} />
+        
          
         {/* <Route exact path='/directory' render={() => <Directory campsites={this.props.campsites} />} />
                      

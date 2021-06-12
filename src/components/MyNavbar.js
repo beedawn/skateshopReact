@@ -54,15 +54,15 @@ const MyNavbar = (props) => {
                 Products
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem href="Completes">Completes</DropdownItem>
-                <DropdownItem href="Decks">Decks</DropdownItem>
-                <DropdownItem href="Trucks">Trucks</DropdownItem>
-                <DropdownItem href="Wheels">Wheels</DropdownItem>
-                <DropdownItem href="Bearings">Bearings</DropdownItem>
-                <DropdownItem href="Accessories">Accessories</DropdownItem>
+                <DropdownItem href="/category/Completes">Completes</DropdownItem>
+                <DropdownItem href="/category/Decks">Decks</DropdownItem>
+                <DropdownItem href="/category/Trucks">Trucks</DropdownItem>
+                <DropdownItem href="/category/Wheels">Wheels</DropdownItem>
+                <DropdownItem href="/category/Bearings">Bearings</DropdownItem>
+                <DropdownItem href="/category/Accessories">Accessories</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="Clothing">Clothing</DropdownItem>
-                <DropdownItem href="Shoes">Shoes</DropdownItem>
+                <DropdownItem href="/category/Clothing">Clothing</DropdownItem>
+                <DropdownItem href="/category/Shoes">Shoes</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
 

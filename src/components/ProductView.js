@@ -12,6 +12,10 @@ function ProductView (props) {
 const filteredProduct = PRODUCTS.filter(function (el){
     return el.category == cat;
 })
+if(filteredProduct.length == 0)
+{return( <div>
+    404 Error - Not Found
+</div>)}
     return(
         <div>
             <div className="container">
