@@ -3,7 +3,7 @@ import PRODUCTS from '../shared/Products';
 import "./styles.css";
 
 const featuredProduct = PRODUCTS.filter(function (el){
-    return el.featured == "true";
+    return el.featured === "true";
 })
 
 
@@ -11,7 +11,7 @@ function Home () {
 return(
     <div>
        
-       {featuredProduct.map(({id, name, src, price, category, featured, description}) => <div> <img className="featured-thumbnail img-fluid" key={id} src={src} title={name}  /> </div>)}
+       {featuredProduct.map(({id, name, src, price, category, featured, description}) => <div className="col-4 product-col"> <img className="featured-thumbnail" key={id} src={src} title={name} alt={description} /> </div>)}
      
        {featuredProduct[0].name}
        
@@ -24,11 +24,11 @@ return(
                     <div className="row">
                         <div className="col-4 product-col">
                             <a href="product_page.html"><img src={process.env.PUBLIC_URL + '/imgs/priyanuch-konkaew-wYG0QiyhrVY-unsplash.jpg'}
-                                    alt="" className="featured-thumbnail img-fluid" /></a>
+                                    alt="" className="featured-thumbnail" /></a>
                             <a href="product_page.html"><img src="imgs/maksym-zakharyak-IjPWFZncmxs-unsplash.jpg" alt=""
-                                    className="featured-thumbnail img-fluid" /></a>
+                                    className="featured-thumbnail" /></a>
                             <a href="product_page.html"><img src="imgs/zachary-staines-jhMt5TTqJS0-unsplash.jpg" alt=""
-                                    className="featured-thumbnail img-fluid" /></a>
+                                    className="featured-thumbnail" /></a>
                         </div>
                         <div className="col-4 product-col">
                             <a href="product_page.html"> <img src="imgs/nijwam-swargiary-fk4e0R8Xw9I-unsplash.jpg" alt=""

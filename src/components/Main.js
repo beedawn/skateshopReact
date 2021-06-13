@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import Footer from "./Footer";
 import ProductView from "./ProductView";
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import SingleProduct from './SingleProduct';
 
 
 function Main() {
@@ -18,10 +19,12 @@ function Main() {
 
       <Switch>
         <Route path="/home" component={Home} />
+        <Route path="/product/:p" render={(props) => (<SingleProduct {...props} product={props.match.params.p} /> )} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/category/:id" render={(props) => (<ProductView {...props} category={props.match.params.id} />
         )} />
+         
         
          
         {/* <Route exact path='/directory' render={() => <Directory campsites={this.props.campsites} />} />
