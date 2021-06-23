@@ -24,7 +24,7 @@ if(cat==="All"){
                         <h4>All Products</h4>
                         <div className="row">
            {PRODUCTS.map(({id, name, src, price, category, featured, description}) => 
-           <div className="col-6 col-md-4 product-col"> 
+           <div className="col-lg-4 product-col"> 
               <a href={'/product/' + id}> <img className="product-thumbnail" key={id} src={src} title={name}  /> </a>
                     <div className="product-overlay">{name}</div>
                         <div className="product-overlay-price">{price}</div> 
@@ -57,7 +57,7 @@ if(filteredProduct.length === 0)
                         <h4>{cat}</h4>
                         <div className="row">
            {filteredProduct.map(({id, name, src, price, category, featured, description}) => 
-           <div className="col-6 col-md-4 product-col"> 
+           <div className="col-lg-4 product-col"> 
               <a href={'/product/' + id}> <img className="product-thumbnail" key={id} src={src} title={name}  /> </a>
                     <div className="product-overlay">{name}</div>
                         <div className="product-overlay-price">{price}</div> 
