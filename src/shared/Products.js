@@ -6,7 +6,8 @@ const PRODUCTS = [
         price: 29.99,
         category:"Completes",
         featured:"true",
-        description:"Squirly plastic board."
+        description:"Squirly plastic board.",
+        brand:"Cent"
     },
     {
         id: "1",
@@ -15,7 +16,8 @@ const PRODUCTS = [
         price: 89.99,
         category:"Completes",
         featured:"true",
-        description:"Caw Caw!"
+        description:"Caw Caw!",
+        brand:"Birds"
     },
     {
         id: "2",
@@ -24,7 +26,8 @@ const PRODUCTS = [
         price: 89.99,
         category:"Completes",
         featured:"true",
-        description:"For all the fruit loops fans."
+        description:"For all the fruit loops fans.",
+        brand:"Birds"
     },
     {
         id: "3",
@@ -33,7 +36,8 @@ const PRODUCTS = [
         price: 109.99,
         category:"Completes",
         featured:"true",
-        description:"Hands Complete Deck"
+        description:"Hands Complete Deck",
+        brand:"Hands"
     },
     {
         id: "4",
@@ -42,7 +46,8 @@ const PRODUCTS = [
         price: 59.99,
         category:"Decks",
         featured:"false",
-        description:"Painted Deck"
+        description:"Painted Deck",
+        brand:"Art Skateboards"
     },
     {
         id: "5",

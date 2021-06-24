@@ -42,12 +42,14 @@ if(filteredProduct.length === 0)
             </div>)}
             </div>
             <div class="col-lg-5">
-                <h3 class="product-page-h3">Brand Name</h3>
-                <h4 class="product-page-h4">8.5 Complete "Hands" </h4>
+            {filteredProduct.map(({name, price, brand, category, featured, description}) => 
+            <div>
+                <h3 class="product-page-h3">{brand}</h3>
+                <h4 class="product-page-h4">{name} </h4>
                 <hr />
-                <p>The world's finest skateboard.
+                <p>{description}
                 </p>
-                <p>$99.99</p>
+                <p>${price}</p>
                 <form>
                     <div class="form-group row">
                         <label for="qtySelect" class="mr-3 col-2 col-form-label">Qty:</label>
@@ -69,6 +71,7 @@ if(filteredProduct.length === 0)
                     </div>
             
                 </form>
+                </div>)}
                 <hr />
                 <p id="shipping">Pick up is always free. Free shipping available on orders over $50.</p>
             </div>
