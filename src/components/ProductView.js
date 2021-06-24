@@ -1,5 +1,4 @@
 import React from 'react';
-import PRODUCTS from '../shared/Products';
 import "./styles.css";
 
 
@@ -8,9 +7,9 @@ import "./styles.css";
 
 function ProductView (props) {
     const cat = props.category;
-    
+    const products = props.products;
 
-const filteredProduct = PRODUCTS.filter(function (el){
+const filteredProduct = products.filter(function (el){
     return el.category === cat;
 })
 
@@ -23,7 +22,7 @@ if(cat==="All"){
                     
                         <h4>All Products</h4>
                         <div className="row">
-           {PRODUCTS.map(({id, name, src, price, category, featured, description}) => 
+           {products.map(({id, name, src, price, category, featured, description}) => 
            <div className="col-lg-4 product-col"> 
               <a href={'/product/' + id}> <img className="product-thumbnail" key={id} src={src} title={name}  /> </a>
                     <div className="product-overlay">{name}</div>

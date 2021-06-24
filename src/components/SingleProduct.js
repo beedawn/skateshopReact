@@ -1,5 +1,4 @@
 import React from 'react';
-import PRODUCTS from '../shared/Products';
 import "./styles.css";
 
 
@@ -8,11 +7,12 @@ import "./styles.css";
 
 function SingleProduct (props) {
     const cat = props.product;
+    const products = props.products;
 
     const addNewItem = () => {
         this.setState({cart: [...this.state.cart, this.state.input]});
       }; 
-const filteredProduct = PRODUCTS.filter(function (el){
+const filteredProduct = products.filter(function (el){
     return el.id === cat;
 })
 

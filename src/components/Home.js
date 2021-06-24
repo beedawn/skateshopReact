@@ -1,13 +1,21 @@
 import React from 'react';
-import PRODUCTS from '../shared/Products';
 import "./styles.css";
 
-const featuredProduct = PRODUCTS.filter(function (el){
-    return el.featured === "true";
-})
 
 
-function Home () {
+
+
+
+
+
+function Home (props) {
+
+    const products = props.products; 
+
+    const featuredProduct = products.filter(function (el){
+        return el.featured === "true";
+    })
+    
 return(
     <div>
        <div className="container">
