@@ -16,7 +16,7 @@ return(
                 <div className="col-lg-6">
                     <h4>Featured Products</h4>
                     <div className="row">
-                    {featuredProduct.map(({id, name, src, price, category, featured, description}) => <div className="col-lg-4 col-sm-6 product-col"> <a href={'/product/' + id}><img className="featured-thumbnail" key={id} src={src} title={name} alt={description} /></a> </div>)}
+                    {featuredProduct.map(({id, name, src, price, category, featured, description}) => <div className="col-lg-4 col-sm-6 featured-col"> <a href={'/product/' + id}><img className="featured-thumbnail" key={id} src={src} title={name} alt={description} /></a> </div>)}
                         </div>
                         
                     </div>

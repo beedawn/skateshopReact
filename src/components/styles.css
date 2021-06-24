@@ -32,12 +32,16 @@
     height:100%;
     
     object-fit:cover;
-    padding:.25rem .25rem;
+    padding:.25rem 0rem;
     margin:0;
 }
 .product-col{
-
+height: 27rem;
 }
+.featured-col{
+    max-width: 20rem;
+    
+    }
 
 .site-footer{
     
@@ -90,7 +94,7 @@
     height:25rem;
     
     object-fit:cover;
-    padding:.25rem .25rem;
+    padding:0rem .25rem;
     margin:0;
 }
 
@@ -120,12 +124,13 @@
     
     background-color:rgba(255,255,255,0.75);
     
-    bottom: 5rem;
-    left: 6rem;
-    width: 20rem;
+    bottom: 8rem;
+    left: 35%;
+    width: 65%;
+    height:5rem;
+    padding:.25rem .5rem;
     font-weight:bold;
     font-size:1.5rem;
-    padding:.5rem;
     position: relative;
     z-index:100;
     color:black;
@@ -139,9 +144,9 @@
     
     background-color:rgba(209, 2, 2, 0.75);
     
-    bottom: 70%;
-    left: 1rem;
-    width: 20rem;
+    bottom: 100%;
+    left: 1%;
+    width: 50%;
     font-weight:bold;
     font-size:1.5rem;
     padding:1.25rem;
