@@ -10,10 +10,16 @@ import ProductView from "./ProductView";
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import SingleProduct from './SingleProduct';
 import PRODUCTS from '../shared/Products';
+import { useState } from 'react';
 
 
 function Main() {
   const products = PRODUCTS;
+  const [cartItems, setCartItems] = useState([]);
+
+
+
+  
   return (
     <div>
       <MyNavbar />
