@@ -15,22 +15,22 @@ import { useState } from 'react';
 
 function Main() {
   const products = PRODUCTS;
-  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCartItems] = useState([]);
 
-
+  
 
   
   return (
     <div>
-      <MyNavbar />
+      <MyNavbar cart={cart} />
       <MyCarousel />
 
       <Switch>
-        <Route path="/home" render={(props) => (<Home {...props} products={products}  /> )} />
-        <Route path="/product/:p" render={(props) => (<SingleProduct products={products} {...props} product={props.match.params.p} /> )} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/category/:id" render={(props) => (<ProductView products={products} {...props} category={props.match.params.id} />
+        <Route path="/home" render={(props) => (<Home {...props} products={products}  cart={cart} /> )} />
+        <Route path="/product/:p" render={(props) => (<SingleProduct products={products} setCartItems={setCartItems} cart={cart} {...props} product={props.match.params.p} /> )} />
+        <Route path="/about" component={About} cart={cart} />
+        <Route path="/contact" component={Contact} cart={cart}/>
+        <Route path="/category/:id" render={(props) => (<ProductView products={products} cart={cart} {...props} category={props.match.params.id} />
         )} />
          
         

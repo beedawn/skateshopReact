@@ -1,4 +1,5 @@
 import React from 'react';
+import CartModal from './CartModal';
 import "./styles.css";
 
 
@@ -8,9 +9,12 @@ import "./styles.css";
 function SingleProduct (props) {
     const cat = props.product;
     const products = props.products;
+    const setCartItems = props.setCartItems;
 
-    const addNewItem = () => {
-        this.setState({cart: [...this.state.cart, this.state.input]});
+    const addNewItem = (product) => {
+        console.log('test')
+        console.log(props.cart.length)
+        setCartItems([...props.cart, product]);
       }; 
 const filteredProduct = products.filter(function (el){
     return el.id === cat;
@@ -42,28 +46,23 @@ if(filteredProduct.length === 0)
             </div>)}
             </div>
             <div class="col-lg-5">
-            {filteredProduct.map(({name, price, brand, category, featured, description}) => 
+            {filteredProduct.map((product) => 
             <div>
-                <h3 class="product-page-h3">{brand}</h3>
-                <h4 class="product-page-h4">{name} </h4>
+                <h3 class="product-page-h3">{product.brand}</h3>
+                <h4 class="product-page-h4">{product.name} </h4>
                 <hr />
-                <p>{description}
+                <p>{product.description}
                 </p>
-                <p>${price}</p>
-                <form>
+                <p>${product.price}</p>
+                <form onSubmit={props.handleSubmit}>
                     <div class="form-group row">
                         <label for="qtySelect" class="mr-3 col-2 col-form-label">Qty:</label>
-                        <select class="form-control col-3 col-md-2" id="qtySelect">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                        <input type="number" class="form-control col-3 col-md-2" id="qtySelect"></input>
+                            
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            <button type="button" class="btn btn-primary" onClick={() => {addNewItem(product)}}>Add to Cart</button>
                         
                          <button type="button" class="btn btn-outline-primary">Buy
                                 Now</button>

@@ -17,7 +17,7 @@ import {
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CartModal = (props) => {
-  const { buttonLabel, title, className } = props;
+  const { buttonLabel, title, className,} = props;
 
   const [modal, setModal] = useState(false);
 
@@ -32,14 +32,16 @@ const CartModal = (props) => {
         <ModalHeader toggle={toggle}>{title}</ModalHeader>
         <ModalBody>
           <Form>
+          {props.cart.map((product) => 
+           <FormGroup>
+           <Label for="item">{product.name}</Label>
+           <Input type="number" name="qty" value={product.qty} />
+         </FormGroup>)}
             <FormGroup>
               <Label for="item">Item 1</Label>
               <Input type="number" name="qty" />
             </FormGroup>
-            <FormGroup>
-              <Label for="password">Password</Label>
-              <Input type="password" name="password" id="password"></Input>
-            </FormGroup>
+            
           </Form>
         </ModalBody>
         <ModalFooter>
