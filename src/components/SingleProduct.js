@@ -1,7 +1,7 @@
 import React from 'react';
 import CartModal from './CartModal';
 import "./styles.css";
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,11 +11,7 @@ function SingleProduct (props) {
     const products = props.products;
     const setCartItems = props.setCartItems;
 
-    const addNewItem = (product) => {
-        console.log('test')
-        console.log(props.cart.length)
-        setCartItems([...props.cart, product]);
-      }; 
+    const addNewItem = props.addNewItem;
 const filteredProduct = products.filter(function (el){
     return el.id === cat;
 })
@@ -33,7 +29,7 @@ if(filteredProduct.length === 0)
         <div class="row">
             <div class="col pb-4">
             {filteredProduct.map(({category, featured, description}) => 
-                <a href={'/category/' + category}><i class="fa fa-backward mr-2"></i>Back to {category}</a>
+                <Link to={'/category/' + category}><i class="fa fa-backward mr-2"></i>Back to {category}</Link>
             )}
             </div>
         </div>

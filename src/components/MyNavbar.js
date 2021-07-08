@@ -28,6 +28,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./MyNavBar.css";
 import LoginModal from "./LoginModal";
 import CartModal from "./CartModal";
+import { Link } from 'react-router-dom';
 
 const rightSideNavbar = {
   marginLeft: "auto",
@@ -42,35 +43,35 @@ const MyNavbar = (props) => {
   return (
     <div className="sticky-top">
       <Navbar color="light" className="bg-dark p-2 " dark expand="lg">
-        <NavbarBrand href="/">Bob's Skateshop</NavbarBrand>
+        <NavbarBrand><Link to="/">Bob's Skateshop</Link></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/">Home</NavLink>
+              <NavLink to="/">Home</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Products
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem href="/category/Completes">Completes</DropdownItem>
-                <DropdownItem href="/category/Decks">Decks</DropdownItem>
-                <DropdownItem href="/category/Trucks">Trucks</DropdownItem>
-                <DropdownItem href="/category/Wheels">Wheels</DropdownItem>
-                <DropdownItem href="/category/Bearings">Bearings</DropdownItem>
-                <DropdownItem href="/category/Accessories">Accessories</DropdownItem>
+                <DropdownItem><Link to="/category/Completes">Completes</Link></DropdownItem>
+                <DropdownItem ><Link to="/category/Decks">Decks</Link></DropdownItem>
+                <DropdownItem ><Link to="/category/Trucks">Trucks</Link></DropdownItem>
+                <DropdownItem ><Link to="/category/Wheels">Wheels</Link></DropdownItem>
+                <DropdownItem><Link to="/category/Bearings">Bearings</Link></DropdownItem>
+                <DropdownItem> <Link to="/category/Accessories">Accessories</Link></DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="/category/Clothing">Clothing</DropdownItem>
-                <DropdownItem href="/category/Shoes">Shoes</DropdownItem>
+                <DropdownItem><Link to="/category/Clothing">Clothing</Link></DropdownItem>
+                <DropdownItem><Link to="/category/Shoes">Shoes</Link></DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
 
             <NavItem>
-              <NavLink href="/about">About</NavLink>
+              <NavLink to="/about"><li>About</li></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/contact">Contact</NavLink>
+              <NavLink><Link to="/contact">Contact</Link></NavLink>
             </NavItem>
           </Nav>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import "./styles.css";
+import { Link } from 'react-router-dom';
 
 
 
@@ -24,7 +25,7 @@ if(cat==="All"){
                         <div className="row">
            {products.map(({id, name, src, price, category, featured, description}) => 
            <div className="col-lg-4 product-col"> 
-              <a href={'/product/' + id}> <img className="product-thumbnail" key={id} src={src} title={name}  /> </a>
+              <Link to={'/product/' + id}> <img className="product-thumbnail" key={id} src={src} title={name}  /> </Link>
                     <div className="product-overlay">{name}</div>
                         <div className="product-overlay-price">{price}</div> 
             </div>)}
@@ -57,7 +58,7 @@ if(filteredProduct.length === 0)
                         <div className="row">
            {filteredProduct.map(({id, name, src, price, category, featured, description}) => 
            <div className="col-lg-4 product-col"> 
-              <a href={'/product/' + id}> <img className="product-thumbnail" key={id} src={src} title={name}  /> </a>
+              <Link to={'/product/' + id}> <img className="product-thumbnail" key={id} src={src} title={name}  /> </Link>
                     <div className="product-overlay">{name}</div>
                         <div className="product-overlay-price">{price}</div> 
             </div>)}

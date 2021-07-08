@@ -17,7 +17,11 @@ function Main() {
   const products = PRODUCTS;
   const [cart, setCartItems] = useState([]);
 
-  
+  const addNewItem = (product) => {
+    console.log('test')
+    console.log(cart.length)
+    setCartItems([...cart, product]);
+  }; 
 
   
   return (
@@ -27,7 +31,7 @@ function Main() {
 
       <Switch>
         <Route path="/home" render={(props) => (<Home {...props} products={products}  cart={cart} /> )} />
-        <Route path="/product/:p" render={(props) => (<SingleProduct products={products} setCartItems={setCartItems} cart={cart} {...props} product={props.match.params.p} /> )} />
+        <Route path="/product/:p" render={(props) => (<SingleProduct products={products} setCartItems={setCartItems} addNewItem={addNewItem} cart={cart} {...props} product={props.match.params.p} /> )} />
         <Route path="/about" component={About} cart={cart} />
         <Route path="/contact" component={Contact} cart={cart}/>
         <Route path="/category/:id" render={(props) => (<ProductView products={products} cart={cart} {...props} category={props.match.params.id} />
