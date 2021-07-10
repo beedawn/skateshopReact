@@ -35,6 +35,13 @@ const rightSideNavbar = {
   bottom: "20rem",
 };
 
+const style = {
+  textDecoration: 'none'
+}
+
+const navBarDropdownStyle = {
+color:'#000000'
+}
 const MyNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -43,35 +50,35 @@ const MyNavbar = (props) => {
   return (
     <div className="sticky-top">
       <Navbar color="light" className="bg-dark p-2 " dark expand="lg">
-        <NavbarBrand><Link to="/">Bob's Skateshop</Link></NavbarBrand>
+      <Link to="/" style={style}><NavbarBrand>Bob's Skateshop</NavbarBrand></Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink to="/">Home</NavLink>
+            <Link to="/" style={style}><NavLink to="/">Home</NavLink></Link>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Products
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem><Link to="/category/Completes">Completes</Link></DropdownItem>
-                <DropdownItem ><Link to="/category/Decks">Decks</Link></DropdownItem>
-                <DropdownItem ><Link to="/category/Trucks">Trucks</Link></DropdownItem>
-                <DropdownItem ><Link to="/category/Wheels">Wheels</Link></DropdownItem>
-                <DropdownItem><Link to="/category/Bearings">Bearings</Link></DropdownItem>
-                <DropdownItem> <Link to="/category/Accessories">Accessories</Link></DropdownItem>
+                <DropdownItem><Link to="/category/Completes" style={(navBarDropdownStyle, style)}>Completes</Link></DropdownItem>
+                <DropdownItem ><Link to="/category/Decks" style={style}>Decks</Link></DropdownItem>
+                <DropdownItem ><Link to="/category/Trucks" style={style}>Trucks</Link></DropdownItem>
+                <DropdownItem ><Link to="/category/Wheels" style={style}>Wheels</Link></DropdownItem>
+                <DropdownItem><Link to="/category/Bearings" style={style}>Bearings</Link></DropdownItem>
+                <DropdownItem> <Link to="/category/Accessories" style={style}>Accessories</Link></DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem><Link to="/category/Clothing">Clothing</Link></DropdownItem>
-                <DropdownItem><Link to="/category/Shoes">Shoes</Link></DropdownItem>
+                <DropdownItem><Link to="/category/Clothing" style={style}>Clothing</Link></DropdownItem>
+                <DropdownItem><Link to="/category/Shoes" style={style}>Shoes</Link></DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
 
             <NavItem>
-              <NavLink to="/about"><li>About</li></NavLink>
+             <Link to="/about" style={style}> <NavLink>About</NavLink></Link>
             </NavItem>
             <NavItem>
-              <NavLink><Link to="/contact">Contact</Link></NavLink>
+            <Link to="/contact" style={style}><NavLink>Contact</NavLink></Link>
             </NavItem>
           </Nav>
 

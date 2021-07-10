@@ -7,7 +7,8 @@ const PRODUCTS = [
         category:"Completes",
         featured:"true",
         description:"Squirly plastic board.",
-        brand:"Cent"
+        brand:"Cent",
+        qty:0
     },
     {
         id: "1",
@@ -17,7 +18,8 @@ const PRODUCTS = [
         category:"Completes",
         featured:"true",
         description:"Caw Caw!",
-        brand:"Birds"
+        brand:"Birds",
+        qty:0
     },
     {
         id: "2",
@@ -27,7 +29,8 @@ const PRODUCTS = [
         category:"Completes",
         featured:"true",
         description:"For all the fruit loops fans.",
-        brand:"Birds"
+        brand:"Birds",
+        qty:0
     },
     {
         id: "3",
@@ -37,7 +40,8 @@ const PRODUCTS = [
         category:"Completes",
         featured:"true",
         description:"Hands Complete Deck",
-        brand:"Hands"
+        brand:"Hands",
+        qty:0
     },
     {
         id: "4",
@@ -47,7 +51,8 @@ const PRODUCTS = [
         category:"Decks",
         featured:"false",
         description:"Painted Deck",
-        brand:"Art Skateboards"
+        brand:"Art Skateboards",
+        qty:0
     },
     {
         id: "5",
@@ -56,7 +61,8 @@ const PRODUCTS = [
         price: 49.99,
         category:"Decks",
         featured:"false",
-        description:"Born to Ride!"
+        description:"Born to Ride!",
+        qty:0
     },
     {
         id: "6",
@@ -65,7 +71,8 @@ const PRODUCTS = [
         price: 64.99,
         category:"Decks",
         featured:"true",
-        description:"Rawr."
+        description:"Rawr.",
+        qty:0
     },
     {
         id: "7",
@@ -74,7 +81,8 @@ const PRODUCTS = [
         price: 59.99,
         category:"Decks",
         featured:"false",
-        description:""
+        description:"",
+        qty:0
     },
     {
         id: "8",
@@ -83,7 +91,8 @@ const PRODUCTS = [
         price: 59.99,
         category:"Decks",
         featured:"true",
-        description:"Wood Cream"
+        description:"Wood Cream",
+        qty:0
     },
     {
         id: "9",
@@ -92,7 +101,8 @@ const PRODUCTS = [
         price: 49.99,
         category:"Trucks",
         featured:"false",
-        description:"Silver Trucks"
+        description:"Silver Trucks",
+        qty:0
     },
     {
         id: "10",
@@ -101,7 +111,8 @@ const PRODUCTS = [
         price: 49.99,
         category:"Trucks",
         featured:"false",
-        description:"Silver Trucks, but wider."
+        description:"Silver Trucks, but wider.",
+        qty:0
     },
     {
         id: "11",
@@ -110,7 +121,8 @@ const PRODUCTS = [
         price: 49.99,
         category:"Trucks",
         featured:"false",
-        description:"Black & Red Trucks"
+        description:"Black & Red Trucks",
+        qty:0
     },
     {
         id: "12",
@@ -119,7 +131,8 @@ const PRODUCTS = [
         price: 49.99,
         category:"Trucks",
         featured:"false",
-        description:"White Trucks"
+        description:"White Trucks",
+        qty:0
     },
     {
         id: "13",
@@ -128,7 +141,8 @@ const PRODUCTS = [
         price: 49.99,
         category:"Trucks",
         featured:"false",
-        description:"Black Trucks"
+        description:"Black Trucks",
+        qty:0
     },
     {
         id: "14",
@@ -137,7 +151,8 @@ const PRODUCTS = [
         price: 49.99,
         category:"Trucks",
         featured:"false",
-        description:"Splatter Trucks"
+        description:"Splatter Trucks",
+        qty:0
     },
     {
         id: "15",
@@ -146,7 +161,8 @@ const PRODUCTS = [
         price: 29.99,
         category:"Wheels",
         featured:"false",
-        description:"Black Wheels"
+        description:"Black Wheels",
+        qty:0
     },
     {
         id: "16",
@@ -155,7 +171,8 @@ const PRODUCTS = [
         price: 49.99,
         category:"Wheels",
         featured:"false",
-        description:"Off-Road Wheels"
+        description:"Off-Road Wheels",
+        qty:0
     },
     {
         id: "17",
@@ -164,7 +181,8 @@ const PRODUCTS = [
         price: 29.99,
         category:"Wheels",
         featured:"false",
-        description:"White Wheels"
+        description:"White Wheels",
+        qty:0
     },
     {
         id: "18",
@@ -173,7 +191,8 @@ const PRODUCTS = [
         price: 49.99,
         category:"Bearings",
         featured:"false",
-        description:"Ultra Bearings"
+        description:"Ultra Bearings",
+        qty:0
     },
     {
         id: "19",
@@ -182,7 +201,8 @@ const PRODUCTS = [
         price: 29.99,
         category:"Bearings",
         featured:"false",
-        description:"Great Bearings"
+        description:"Great Bearings",
+        qty:0
     },
     {
         id: "20",
@@ -191,7 +211,8 @@ const PRODUCTS = [
         price: 15.99,
         category:"Bearings",
         featured:"false",
-        description:"Good Bearings"
+        description:"Good Bearings",
+        qty:0
     },
     {
         id: "21",
@@ -200,7 +221,8 @@ const PRODUCTS = [
         price: 4.99,
         category:"Accessories",
         featured:"false",
-        description:"Tech Decks"
+        description:"Tech Decks",
+        qty:0
     },
     {
         id: "22",
@@ -209,7 +231,8 @@ const PRODUCTS = [
         price: 14.99,
         category:"Accessories",
         featured:"false",
-        description:"Socks"
+        description:"Socks",
+        qty:0
     },
     {
         id: "23",
@@ -218,7 +241,8 @@ const PRODUCTS = [
         price: 9.99,
         category:"Accessories",
         featured:"false",
-        description:"Masks"
+        description:"Masks",
+        qty:0
     },
     {
         id: "24",
@@ -227,7 +251,8 @@ const PRODUCTS = [
         price: 24.99,
         category:"Clothing",
         featured:"false",
-        description:"Octopus Black Tee"
+        description:"Octopus Black Tee",
+        qty:0
     },
     {
         id: "25",
@@ -236,7 +261,8 @@ const PRODUCTS = [
         price: 24.99,
         category:"Clothing",
         featured:"false",
-        description:"Burgundy Tee"
+        description:"Burgundy Tee",
+        qty:0
     },
     {
         id: "26",
@@ -245,7 +271,8 @@ const PRODUCTS = [
         price: 0,
         category:"",
         featured:"",
-        description:""
+        description:"",
+        qty:0
     },
     {
         id: "27",
@@ -254,7 +281,8 @@ const PRODUCTS = [
         price: 420.69,
         category:"longjohnsilvers",
         featured:"",
-        description:""
+        description:"",
+        qty:0
     },
     {
         id: "28",
@@ -263,7 +291,8 @@ const PRODUCTS = [
         price: 0,
         category:"",
         featured:"",
-        description:""
+        description:"",
+        qty:0
     },
     {
         id: "29",
@@ -272,7 +301,8 @@ const PRODUCTS = [
         price: 0,
         category:"",
         featured:"",
-        description:""
+        description:"",
+        qty:0
     },
     {
         id: "30",
@@ -288,7 +318,8 @@ const PRODUCTS = [
         name: "",
         src:"",
         price: 0,
-        description:""
+        description:"",
+        qty:0
     },
     {
         id: "32",
@@ -297,7 +328,8 @@ const PRODUCTS = [
         price: 0,
         category:"",
         featured:"",
-        description:""
+        description:"",
+        qty:0
     },
     {
         id: "33",
@@ -315,7 +347,8 @@ const PRODUCTS = [
         price: 0,
         category:"",
         featured:"",
-        description:""
+        description:"",
+        qty:0
     },
     {
         id: "35",
@@ -324,7 +357,8 @@ const PRODUCTS = [
         price: 0,
         category:"",
         featured:"",
-        description:""
+        description:"",
+        qty:0
     }
     
 

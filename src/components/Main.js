@@ -16,11 +16,17 @@ import { useState } from 'react';
 function Main() {
   const products = PRODUCTS;
   const [cart, setCartItems] = useState([]);
-
+  
   const addNewItem = (product) => {
     console.log('test')
     console.log(cart.length)
-    setCartItems([...cart, product]);
+    product.qty+=1;
+    if(cart.includes(product)){
+      console.log("test incrementer")
+      product.qty=product.qty++;
+    }
+    else{
+    setCartItems([...cart, product]);}
   }; 
 
   

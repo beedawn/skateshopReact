@@ -53,7 +53,7 @@ if(filteredProduct.length === 0)
                 <form onSubmit={props.handleSubmit}>
                     <div class="form-group row">
                         <label for="qtySelect" class="mr-3 col-2 col-form-label">Qty:</label>
-                        <input type="number" class="form-control col-3 col-md-2" id="qtySelect"></input>
+                        <input type="number" class="form-control col-3 col-md-2" id="qtySelect" value={product.qty}></input>
                             
                     </div>
                     <div class="row">
