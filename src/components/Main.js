@@ -27,7 +27,7 @@ function Main() {
     if(cart.includes(product)){
       if(addQty!= undefined){
       console.log("test incrementer")
-      
+      console.log("Product QTY " + product.qty)
       console.log(product.qty + parseInt(addQty))
       console.log(typeof(product.qty))
       console.log(typeof(parseInt(addQty)))
@@ -38,13 +38,17 @@ function Main() {
       }
     }
     else{
-    setCartItems([...cart, product]);}
-    product.qty=parseInt(addQty)
+    setCartItems([...cart, product]);
+    // product.qty=parseInt(addQty)
+    console.log("After cart" +cart.length)
+  }
   }; 
 
   const handleChange = product => (event) => {
     console.log(event.target.value);
+    console.log("product qty" + product.qty)
    console.log(product);
+   console.log("Pizza")
    addNewItem(product, event.target.value);
    
     
