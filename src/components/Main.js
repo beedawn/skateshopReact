@@ -23,19 +23,23 @@ function Main() {
   const addNewItem = (product, addQty) => {
     console.log('test')
     console.log(cart.length)
-    if(addQty!= undefined){
+    console.log(addQty)
     if(cart.includes(product)){
-      
+      if(addQty!= undefined){
       console.log("test incrementer")
-      console.log(addQty)
+      
       console.log(product.qty + parseInt(addQty))
       console.log(typeof(product.qty))
       console.log(typeof(parseInt(addQty)))
        product.qty=product.qty+parseInt(addQty);
       }
+      else{
+        return;
+      }
     }
     else{
     setCartItems([...cart, product]);}
+    product.qty=parseInt(addQty)
   }; 
 
   const handleChange = product => (event) => {
