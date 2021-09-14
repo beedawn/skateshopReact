@@ -19,7 +19,7 @@ function Main() {
   const addNewItem = (product, addQty) => {
     // console.log('test')
     // console.log(cart.length)
-    // console.log(addQty)
+    console.log("ADDQTY"+parseInt(addQty))
     if (cart.includes(product)) {
       if (addQty != undefined) {
         // console.log("test incrementer")
@@ -39,10 +39,10 @@ function Main() {
   };
 
   const handleChange = (product) => (event) => {
-    console.log(event.target.value);
-    console.log("product qty" + product.qty);
-    console.log(product);
-    product.qty=product.qty+parseInt(event.target.value);
+    // console.log(event.target.value);
+    // console.log("product qty" + product.qty);
+    // console.log(product);
+    // product.qty=product.qty+parseInt(event.target.value);
     // addNewItem(product, event.target.value);
   };
 
