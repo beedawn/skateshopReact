@@ -34,7 +34,7 @@ const CartModal = (props) => {
           <Form>
           {props.cart.map((product) => 
            <FormGroup key={product.id}>
-             <img src={product.src} style={{height: 150}} />
+             <img src={product.src} style={{height: 150}} alt={product.name}/>
            <Label for="item">{product.name}</Label>
            <Input type="number" name="qty" value={product.qty} />
          </FormGroup>)}
