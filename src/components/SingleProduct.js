@@ -2,11 +2,17 @@ import React from 'react';
 import CartModal from './CartModal';
 import "./styles.css";
 import { Link } from 'react-router-dom';
+import { useStore } from 'react-redux';
+
+
+
 
 
 
 
 function SingleProduct (props) {
+    const store = useStore();
+    
     const cat = props.product;
     const products = props.products;
     const setCartItems = props.setCartItems;
