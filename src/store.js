@@ -6,7 +6,8 @@ function reducer(state = initialCart, action) {
   switch (action.type){
     case 'ADD_PRODUCT':
       return {
-        product: state.product,
+        //   state,
+        //  [...state.arr, action.newItem],
       };
       default:{
           return state
