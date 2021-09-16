@@ -2,7 +2,8 @@ import React from 'react';
 import CartModal from './CartModal';
 import "./styles.css";
 import { Link } from 'react-router-dom';
-import { useStore } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 
 
@@ -11,8 +12,11 @@ import { useStore } from 'react-redux';
 
 
 function SingleProduct (props) {
-    const store = useStore();
+    const cart = useSelector((state) => state.cart);
     
+    const dispatch = useDispatch();
+    console.log("heres johnny" + cart);
+
     const cat = props.product;
     const products = props.products;
     const setCartItems = props.setCartItems;

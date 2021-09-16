@@ -5,17 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store } from "./state/store";
 
-
-console.log(store.getState());
-
-store.dispatch({
-  type:'INCREMENT',
-
-});
-
-console.log(store.getState());
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
