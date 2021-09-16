@@ -15,10 +15,15 @@ import {
   faShoppingCart,
   } from "@fortawesome/free-solid-svg-icons";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from "redux";
+import {actionCreators} from "../state/index";
+
 
 const CartModal = (props) => {
+  const state = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   const { buttonLabel, title, className,} = props;
-
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
@@ -32,7 +37,7 @@ const CartModal = (props) => {
         <ModalHeader toggle={toggle}>{title}</ModalHeader>
         <ModalBody>
           <Form>
-          {props.cart.map((product) => 
+          {state.cart.map((product) => 
            <FormGroup key={product.id}>
              <img src={product.src} style={{height: 150}} alt={product.name}/>
            <Label for="item">{product.name}</Label>

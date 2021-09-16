@@ -14,13 +14,12 @@ import {actionCreators} from "../state/index";
 
 
 function SingleProduct (props) {
-    const cart = useSelector((state) => state.cart);
+    const state = useSelector((state) => state.cart);
     
     const dispatch = useDispatch();
 
     const { addToCart } = bindActionCreators(actionCreators, dispatch);
-    console.log("heres johnny" + cart.cart);
-    console.log(cart);
+    
 
     const cat = props.product;
     const products = props.products;
@@ -69,7 +68,7 @@ if(filteredProduct.length === 0)
                 <form onSubmit={props.handleSubmit}>
                     <div class="form-group row">
                         <label for="qtySelect" class="mr-3 col-2 col-form-label">Qty:</label>
-                        <input type="number" class="form-control col-3 col-md-2" id="qtySelect" onChange={props.handleChange(product)}  value={props.product.qty}></input>
+                        <input type="number" class="form-control col-3 col-md-2" id="qtySelect" onChange={props.handleChange(product)}  value={product.qty}></input>
                             
                     </div>
                     <div class="row">
