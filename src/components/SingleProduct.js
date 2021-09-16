@@ -20,6 +20,7 @@ function SingleProduct (props) {
 
     const { addToCart } = bindActionCreators(actionCreators, dispatch);
     console.log("heres johnny" + cart.cart);
+    console.log(cart);
 
     const cat = props.product;
     const products = props.products;
@@ -73,7 +74,7 @@ if(filteredProduct.length === 0)
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button type="button" class="btn btn-primary" onClick={() => addToCart(1)}>Add to Cart</button>
+                            <button type="button" class="btn btn-primary" onClick={() => addToCart(product)}>Add to Cart</button>
                         
                          <button type="button" class="btn btn-outline-primary">Buy
                                 Now</button>
