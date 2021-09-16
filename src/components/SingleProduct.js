@@ -3,6 +3,8 @@ import CartModal from './CartModal';
 import "./styles.css";
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from "redux";
+import {actionCreators} from "../state/index";
 
 
 
@@ -15,7 +17,9 @@ function SingleProduct (props) {
     const cart = useSelector((state) => state.cart);
     
     const dispatch = useDispatch();
-    console.log("heres johnny" + cart);
+
+    const { addToCart } = bindActionCreators(actionCreators, dispatch);
+    console.log("heres johnny" + cart.cart);
 
     const cat = props.product;
     const products = props.products;
@@ -69,7 +73,7 @@ if(filteredProduct.length === 0)
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button type="button" class="btn btn-primary" onClick={() => {addNewItem(product, props.product.qty)}}>Add to Cart</button>
+                            <button type="button" class="btn btn-primary" onClick={() => addToCart(1)}>Add to Cart</button>
                         
                          <button type="button" class="btn btn-outline-primary">Buy
                                 Now</button>

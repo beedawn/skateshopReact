@@ -1,8 +1,14 @@
+const initialState = {
+    cart:[]
+};
 
-const reducer = (state = 0, action ) => {
+
+const reducer = (state = initialState, action ) => {
     switch(action.type) {
         case "ADD_ITEM":
-            return [...state, action.payload];
+            return { 
+                ...state,
+                cart: [...state.cart, action.payload]};
         // case "DELETE_ITEM":
         //     return state - action.payload;
         default:
