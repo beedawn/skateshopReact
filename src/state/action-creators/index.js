@@ -1,4 +1,4 @@
-export const addToCart = (item, qty) => {
+export const addToCart = (item) => {
     return (dispatch) => {
         dispatch({
             type: "ADD_ITEM",
@@ -6,3 +6,4 @@ export const addToCart = (item, qty) => {
         })
     }
 }
+

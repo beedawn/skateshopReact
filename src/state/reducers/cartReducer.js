@@ -7,13 +7,14 @@ const reducer = (state = initialState, action ) => {
     switch(action.type) {
         case "ADD_ITEM":
             if (state.cart.includes(action.payload)){
-            console.log(action.payload.name +"Pizza");
+                console.log("pizza")
+            console.log(action.payload );
            
              state.cart.map(product => {
                 //  console.log("Were doing it")
-                  console.log(product.qty)
+                console.log("State")
                 console.log(state)
-                 action.payload.name === product.name ? {...product, qty: "5"}: product
+                 action.payload.name === product.name ? /*{...product, qty: product.qty+1 }*/ console.log(product): product
                  console.log(product.qty)
              })
             }

@@ -42,7 +42,7 @@ function Main() {
     // console.log(event.target.value);
     // console.log("product qty" + product.qty);
     // console.log(product);
-    // product.qty=product.qty+parseInt(event.target.value);
+     product.qty=parseInt(event.target.value);
     // addNewItem(product, event.target.value);
   };
 
