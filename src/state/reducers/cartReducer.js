@@ -16,6 +16,8 @@ const reducer = (state = initialState, action ) => {
             }
         // case "DELETE_ITEM":
         //     return state - action.payload;
+        case "UPDATE_QTY":
+            
         default:
             return state; 
     }

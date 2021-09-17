@@ -21,7 +21,7 @@ import {actionCreators} from "../state/index";
 
 
 const CartModal = (props) => {
-  const state = useSelector((state) => state.cart);
+  const store = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const { buttonLabel, title, className,} = props;
   const [modal, setModal] = useState(false);
@@ -37,11 +37,12 @@ const CartModal = (props) => {
         <ModalHeader toggle={toggle}>{title}</ModalHeader>
         <ModalBody>
           <Form>
-          {state.cart.map((product) => 
+          {store.cart.map((product) => 
            <FormGroup key={product.id}>
              <img src={product.src} style={{height: 150}} alt={product.name}/>
            <Label for="item">{product.name}</Label>
-           <Input type="number" name="qty" value={product.qty} />
+           <Input type="number" name="qty" value={store.qty} />
+           <Label for="price">{product.price}</Label>
          </FormGroup>)}
      
             

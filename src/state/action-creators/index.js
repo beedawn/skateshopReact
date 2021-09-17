@@ -1,4 +1,4 @@
-export const addToCart = (item) => {
+export const addToCart = (item, qty) => {
     return (dispatch) => {
         dispatch({
             type: "ADD_ITEM",
