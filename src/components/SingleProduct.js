@@ -70,7 +70,6 @@ function SingleProduct(props) {
                         type="number"
                         class="form-control col-3 col-md-2"
                         id="qtySelect"
-                        onChange={(e) => setCart(e.target.value) }
                         value={store.qty}
                       ></input>
                     </div>
