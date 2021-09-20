@@ -105,7 +105,7 @@ const MyNavbar = (props) => {
             <FontAwesomeIcon icon={faSquare} />
           </div>
           <div className="icons">
-            <button class="btn btn-dark ml-0"><CartModal cart={props.cart} title="Shopping Cart" />
+            <button class="btn btn-dark ml-0"><CartModal title="Shopping Cart" handleChange={props.handleChange} />
               {" "}
             </button>
           </div>

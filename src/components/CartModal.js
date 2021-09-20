@@ -41,7 +41,9 @@ const CartModal = (props) => {
            <FormGroup key={product.id}>
              <img src={product.src} style={{height: 150}} alt={product.name}/>
            <Label for="item">{product.name}</Label>
-           <Input type="number" name="qty" value={product.qty} />
+    
+          
+           <Input type="number" name="qty" onChange={props.handleChange(product)} value={product.qty} />
            <Label for="price">{product.price}</Label>
          </FormGroup>)}
      
