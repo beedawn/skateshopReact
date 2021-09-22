@@ -29,8 +29,12 @@ const CartModal = (props) => {
 
   const toggle = () => setModal(!modal);
 
+  let priceTruncator = function(total, array){
+    return parseFloat((total + (array.price* array.qty)).toFixed(2))
+  }
+
  
-  let cost = store.cart.reduce(function(total, array){return parseFloat((total + (array.price* array.qty)).toFixed(2))},0)
+  let cost = store.cart.reduce(priceTruncator,0)
 
   return (
     <div>
