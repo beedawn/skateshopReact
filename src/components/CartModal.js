@@ -29,7 +29,8 @@ const CartModal = (props) => {
 
   const toggle = () => setModal(!modal);
 
-
+ 
+  let cost = store.cart.reduce(function(total, array){return parseFloat((total + (array.price* array.qty)).toFixed(2))},0)
 
   return (
     <div>
@@ -64,6 +65,8 @@ const CartModal = (props) => {
                 </InputGroup>
               </FormGroup>
             ))}
+            
+          $ {cost}
           </Form>
         </ModalBody>
         <ModalFooter>
