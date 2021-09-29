@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CartModal from "./CartModal";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -104,5 +103,6 @@ function SingleProduct(props) {
     </div>
   );
 }
+
 
 export default SingleProduct;
