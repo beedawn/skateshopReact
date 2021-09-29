@@ -12,7 +12,7 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
-  Alert
+  
 } from "reactstrap";
 
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -39,7 +39,7 @@ const CartModal = (props) => {
   return (
     <div>
       <Button color="dark" onClick={toggle}>
-        <FontAwesomeIcon icon={faShoppingCart} />
+        <FontAwesomeIcon icon={faShoppingCart} /> <div>1</div>
       </Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>{title}</ModalHeader>
