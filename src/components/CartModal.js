@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Modal,
@@ -20,8 +20,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index";
+import { connect } from 'react-redux';
+
 
 const CartModal = (props) => {
+  const [cartCount, setCartCount] = useState(0);
+  useEffect(() => {
+    let count = 0;
+    props.cart.forEach(item => {
+      count = props.cart.length;
+    });
+    setCartCount(count);
+  }, [props.cart, cartCount]);
   const store = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const { buttonLabel, title, className } = props;
@@ -39,7 +49,7 @@ const CartModal = (props) => {
   return (
     <div>
       <Button color="dark" onClick={toggle}>
-        <FontAwesomeIcon icon={faShoppingCart} /> <div>1</div>
+        <FontAwesomeIcon icon={faShoppingCart} /> <div>{cartCount}</div>
       </Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>{title}</ModalHeader>
@@ -85,5 +95,10 @@ const CartModal = (props) => {
     </div>
   );
 };
+const mapStateToProps = state => {
+  return{
+    cart:state.cart.cart
+  }
+}
 
-export default CartModal;
+export default connect(mapStateToProps)(CartModal);

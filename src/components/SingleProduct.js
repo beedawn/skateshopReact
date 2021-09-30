@@ -8,7 +8,6 @@ import { actionCreators } from "../state/index";
 function SingleProduct(props) {
   //Redux
   const store = useSelector((state) => state.cart);
-  const [cart, setCart] = useState(store); 
   const dispatch = useDispatch();
   const { addToCart } = bindActionCreators(actionCreators, dispatch);
 
