@@ -12,44 +12,52 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
-  
 } from "reactstrap";
 
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../state/index";
-import { connect } from 'react-redux';
-
+import { connect } from "react-redux";
 
 const CartModal = (props) => {
   const [cartCount, setCartCount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
+
   useEffect(() => {
     let count = 0;
-    props.cart.forEach(item => {
-      count = props.cart.length;
+    props.cart.forEach((item) => {
+      count += item.qty;
     });
     setCartCount(count);
   }, [props.cart, cartCount]);
   const store = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const { buttonLabel, title, className } = props;
+  const { title, className } = props;
   const [modal, setModal] = useState(false);
+
+  useEffect(() => {
+    let items= 0;
+    let price = 0;
+
+    props.cart.forEach(item =>{
+      items += item.qty;
+      price += item.qty * item.price;
+    })
+    setTotalPrice(price);
+    setTotalItems(items);
+  }, [
+    props.cart,
+    totalPrice,
+    totalItems,
+    setTotalPrice,
+    setTotalItems,
+  ]);
 
   const toggle = () => setModal(!modal);
 
-  let priceTruncator = function(total, array){
-    return parseFloat((total + (array.price* array.qty)).toFixed(2))
-  }
 
 
-  let totalTruncator = function(total, array){
-    return parseInt((total +  array.qty))
-  }
- 
-  let cost = store.cart.reduce(priceTruncator,0)
-  let total = store.cart.reduce(totalTruncator,0);
 
   return (
     <div>
@@ -75,17 +83,15 @@ const CartModal = (props) => {
                     name="qty"
                     onChange={props.handleChange(product)}
                     value={product.qty}
-                    
                   />
                   <InputGroupAddon addonType="append" />{" "}
-                  <InputGroupText for="price"  color="danger">
+                  <InputGroupText for="price" color="danger">
                     $ {product.price}
                   </InputGroupText>
                 </InputGroup>
               </FormGroup>
             ))}
-            
-          $ {cost} Total QTY : {total}
+            $ {totalPrice.toFixed(2)} Total QTY : {totalItems}
           </Form>
         </ModalBody>
         <ModalFooter>
@@ -100,10 +106,10 @@ const CartModal = (props) => {
     </div>
   );
 };
-const mapStateToProps = state => {
-  return{
-    cart:state.cart.cart
-  }
-}
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart.cart,
+  };
+};
 
 export default connect(mapStateToProps)(CartModal);
