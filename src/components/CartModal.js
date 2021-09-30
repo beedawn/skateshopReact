@@ -18,11 +18,19 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector, useDispatch } from "react-redux";
 import { connect } from "react-redux";
+import {removeFromCart} from '../state/action-creators/index'
+
 
 const CartModal = (props) => {
+
+  const onChangeHandler= (e) => {
+    console.log(e.target.value);
+  };
   const [cartCount, setCartCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
+  // const [input, setInput] = useState(props.cart.qty); needs work
+console.log(props.cart)
 
   useEffect(() => {
     let count = 0;
@@ -81,13 +89,14 @@ const CartModal = (props) => {
                   <Input
                     type="number"
                     name="qty"
-                    onChange={props.handleChange(product)}
-                    value={product.qty}
+                    onChange={onChangeHandler}
+                    value={input}
                   />
                   <InputGroupAddon addonType="append" />{" "}
                   <InputGroupText for="price" color="danger">
                     $ {product.price}
                   </InputGroupText>
+                  <button onClick={()=>removeFromCart(product)} >Delete</button>
                 </InputGroup>
               </FormGroup>
             ))}
@@ -112,4 +121,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(CartModal);
+const mapDispatchToProps = dispatch => {
+  return{
+    removeFromCart: () => (id) => dispatch(removeFromCart(id)),
+};
+};
+export default connect(mapStateToProps,mapDispatchToProps)(CartModal);
