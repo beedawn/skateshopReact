@@ -43,8 +43,13 @@ const CartModal = (props) => {
     return parseFloat((total + (array.price* array.qty)).toFixed(2))
   }
 
+
+  let totalTruncator = function(total, array){
+    return parseInt((total +  array.qty))
+  }
  
   let cost = store.cart.reduce(priceTruncator,0)
+  let total = store.cart.reduce(totalTruncator,0);
 
   return (
     <div>
@@ -80,7 +85,7 @@ const CartModal = (props) => {
               </FormGroup>
             ))}
             
-          $ {cost}
+          $ {cost} Total QTY : {total}
           </Form>
         </ModalBody>
         <ModalFooter>
