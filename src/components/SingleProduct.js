@@ -80,7 +80,7 @@ function SingleProduct(props) {
                         <button
                           type="button"
                           class="btn btn-primary"
-                          onClick={() => addToCart(product)}
+                          onClick={() => dispatch(addToCart(product))}
                         >
                           Add to Cart
                         </button>

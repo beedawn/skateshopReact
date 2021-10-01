@@ -10,16 +10,17 @@ import {
 } from "reactstrap";
 
 
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import {removeFromCart, adjustQty} from '../state/action-creators/index'
 
 const CartItem = ({product, adjustQty, removeFromCart}) => {
-
+    const dispatch = useDispatch();
    
     const [input, setInput] = useState(product.qty); 
   const onChangeHandler= (e) => {
     setInput (e.target.value);
     adjustQty(product.id, e.target.value);
+   
     
 
   }
@@ -43,7 +44,7 @@ const CartItem = ({product, adjustQty, removeFromCart}) => {
                   <InputGroupText for="price" color="danger">
                     $ {product.price}
                   </InputGroupText>
-                  <Button onClick={()=>removeFromCart(product.id)}>Delete</Button>
+                  <Button onClick={dispatch(removeFromCart(product.id))}>Delete</Button>
                 </InputGroup>
               </FormGroup>
     )
@@ -52,12 +53,11 @@ const CartItem = ({product, adjustQty, removeFromCart}) => {
 
   
   
-  const mapDispatchToProps = dispatch => {
-    return{
+  const mapDispatchToProps = {
       removeFromCart: () => (id) => dispatch(removeFromCart(id)),
       adjustQty: () => (id, value) => dispatch(adjustQty(id,value))
   };
-  };
+  
 
 
   export default connect(null,mapDispatchToProps)(CartItem);
