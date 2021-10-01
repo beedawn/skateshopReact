@@ -64,7 +64,7 @@ const CartModal = (props) => {
         <ModalHeader toggle={toggle}>{title}</ModalHeader>
         <ModalBody>
           <Form>
-            {store.cart.map((product) => (
+            { store.cart.map((product) => (
               
               <CartItem key={product.id} product={product}/>
               
