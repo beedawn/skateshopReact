@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index";
+import {addToCart} from "../state/action-creators/index"
+
 
 function SingleProduct(props) {
   //Redux
   const store = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const { addToCart } = bindActionCreators(actionCreators, dispatch);
+  // const { addToCart } = bindActionCreators(actionCreators, dispatch);
 
   //pull products via props
   const cat = props.product;
   const products = props.products;
+
 
   // filter products
   const filteredProduct = products.filter(function (el) {
@@ -103,5 +106,11 @@ function SingleProduct(props) {
   );
 }
 
+const mapDispatchToProps =  {
+   
+      addToCart: ((id) => addToCart(id))
 
-export default SingleProduct;
+    
+  };
+
+export default connect(null, mapDispatchToProps)(SingleProduct);

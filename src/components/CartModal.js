@@ -16,7 +16,7 @@ import { connect, useSelector, useDispatch } from "react-redux";
 
 
 
-const CartModal = (props, {item}) => {
+const CartModal = (props) => {
 
   const [cartCount, setCartCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -66,7 +66,7 @@ const CartModal = (props, {item}) => {
           <Form>
             {store.cart.map((product) => (
               
-              <CartItem product={product}/>
+              <CartItem key={product.id} product={product}/>
               
             ))}
             $ {totalPrice.toFixed(2)} Total QTY : {totalItems}

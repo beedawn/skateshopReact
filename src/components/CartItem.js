@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
     Button,
   Input,
@@ -8,22 +8,19 @@ import {
   InputGroupText,
   InputGroup,
 } from "reactstrap";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../state/index";
 
-import { connect, useDispatch } from "react-redux";
+
+import { connect } from "react-redux";
 import {removeFromCart, adjustQty} from '../state/action-creators/index'
 
-const CartItem = ({product}) => {
+const CartItem = ({product, adjustQty, removeFromCart}) => {
 
-    const dispatch = useDispatch();
-    const [input, setInput] = useState(product.qty); //needs work
-    // const { adjustQty, removeFromCart } = bindActionCreators(actionCreators, dispatch);
-console.log(adjustQty(product.id, 5));
+   
+    const [input, setInput] = useState(product.qty); 
   const onChangeHandler= (e) => {
     setInput (e.target.value);
     adjustQty(product.id, e.target.value);
-    console.log(adjustQty(product.id, e.target.value))
+    
 
   }
     return(
@@ -46,7 +43,7 @@ console.log(adjustQty(product.id, 5));
                   <InputGroupText for="price" color="danger">
                     $ {product.price}
                   </InputGroupText>
-                  <Button onClick={()=>removeFromCart(product)} >Delete</Button>
+                  <Button onClick={()=>removeFromCart(product.id)}>Delete</Button>
                 </InputGroup>
               </FormGroup>
     )
