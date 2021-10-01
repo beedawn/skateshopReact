@@ -12,7 +12,7 @@ export const addToCart = (item) => {
 export const removeFromCart = (item) => {
     return(dispatch) => {
         dispatch({
-            type:actionTypes.REMOVE_FROM_CART,
+            type: actionTypes.REMOVE_FROM_CART,
             payload:item
         })
     }

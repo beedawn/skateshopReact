@@ -5,44 +5,35 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  Input,
-  FormGroup,
-  Label,
   Form,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
 } from "reactstrap";
 
+import CartItem from "./CartItem";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useSelector, useDispatch } from "react-redux";
-import { connect } from "react-redux";
-import {removeFromCart} from '../state/action-creators/index'
+import { connect, useSelector, useDispatch } from "react-redux";
 
 
-const CartModal = (props) => {
 
-  const onChangeHandler= (e) => {
-    console.log(e.target.value);
-  };
+
+const CartModal = (props, {item}) => {
+
   const [cartCount, setCartCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
-  // const [input, setInput] = useState(props.cart.qty); needs work
-console.log(props.cart)
+  const [modal, setModal] = useState(false);
 
   useEffect(() => {
     let count = 0;
     props.cart.forEach((item) => {
       count += item.qty;
     });
+
     setCartCount(count);
   }, [props.cart, cartCount]);
   const store = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const { title, className } = props;
-  const [modal, setModal] = useState(false);
 
   useEffect(() => {
     let items= 0;
@@ -64,9 +55,6 @@ console.log(props.cart)
 
   const toggle = () => setModal(!modal);
 
-
-
-
   return (
     <div>
       <Button color="dark" onClick={toggle}>
@@ -77,28 +65,9 @@ console.log(props.cart)
         <ModalBody>
           <Form>
             {store.cart.map((product) => (
-              <FormGroup key={product.id}>
-                <img
-                  src={product.src}
-                  style={{ height: 150 }}
-                  alt={product.name}
-                />
-                <Label for="item">{product.name}</Label>
-
-                <InputGroup>
-                  <Input
-                    type="number"
-                    name="qty"
-                    onChange={onChangeHandler}
-                    value={input}
-                  />
-                  <InputGroupAddon addonType="append" />{" "}
-                  <InputGroupText for="price" color="danger">
-                    $ {product.price}
-                  </InputGroupText>
-                  <button onClick={()=>removeFromCart(product)} >Delete</button>
-                </InputGroup>
-              </FormGroup>
+              
+              <CartItem product={product}/>
+              
             ))}
             $ {totalPrice.toFixed(2)} Total QTY : {totalItems}
           </Form>
@@ -115,15 +84,12 @@ console.log(props.cart)
     </div>
   );
 };
+
 const mapStateToProps = (state) => {
   return {
     cart: state.cart.cart,
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return{
-    removeFromCart: () => (id) => dispatch(removeFromCart(id)),
-};
-};
-export default connect(mapStateToProps,mapDispatchToProps)(CartModal);
+
+export default connect(mapStateToProps)(CartModal);
