@@ -44,7 +44,7 @@ const CartItem = ({product, adjustQty, removeFromCart}) => {
                   <InputGroupText for="price" color="danger">
                     $ {product.price}
                   </InputGroupText>
-                  <Button onClick={dispatch(removeFromCart(product.id))}>Delete</Button>
+                  <Button onClick={() => dispatch(removeFromCart(product))}>Delete</Button>
                 </InputGroup>
               </FormGroup>
     )
@@ -54,8 +54,8 @@ const CartItem = ({product, adjustQty, removeFromCart}) => {
   
   
   const mapDispatchToProps = {
-      removeFromCart: () => (id) => dispatch(removeFromCart(id)),
-      adjustQty: () => (id, value) => dispatch(adjustQty(id,value))
+      removeFromCart: ((id) => removeFromCart(id)),
+      adjustQty: ((id, value) => adjustQty(id,value))
   };
   
 
