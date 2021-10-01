@@ -19,7 +19,7 @@ const CartItem = ({product, adjustQty, removeFromCart}) => {
     const [input, setInput] = useState(product.qty); 
   const onChangeHandler= (e) => {
     setInput (e.target.value);
-    adjustQty(product.id, e.target.value);
+    dispatch(adjustQty(product.id, e.target.value));
    
     
 
