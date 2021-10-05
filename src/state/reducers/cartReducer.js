@@ -7,8 +7,8 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_TO_CART:
-        //check if item is in cart already
-      if (!state.cart.includes(action.payload)) {
+      //check if item is in cart already
+      if (!state.cart.some((i) => i.id === action.payload.id)) {
         return {
           ...state,
           cart: [...state.cart, action.payload],
@@ -17,19 +17,26 @@ const reducer = (state = initialState, action) => {
         const newItem = [...state.cart];
         return {
           ...state,
-          cart: newItem,
+          cart: state.cart.map((item) =>
+            item.id === action.payload.id
+              ? { ...item, qty: +action.payload.qty }
+              : item
+          ),
         };
-      };
+      }
     case actionTypes.REMOVE_FROM_CART:
       return {
-          ...state,
-          cart: state.cart.filter(item => item.id !== action.payload.id  )
-          
+        ...state,
+        cart: state.cart.filter((item) => item.id !== action.payload.id),
       };
     case actionTypes.ADJUST_QTY:
       return {
-          ...state,
-          cart: state.cart.map((item) => item.id === action.payload.id ? {...item, qty: +action.payload.qty}: item)
+        ...state,
+        cart: state.cart.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, qty: +action.payload.qty }
+            : item
+        ),
       };
 
     default:
