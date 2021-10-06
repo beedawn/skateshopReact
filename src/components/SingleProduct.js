@@ -47,7 +47,7 @@ function SingleProduct(props) {
                     <img
                       className="product-page-img"
                       key={id}
-                      src={src}
+                      src= {`/skateshop/${src}`}
                       title={name}
                     />
                   </div>

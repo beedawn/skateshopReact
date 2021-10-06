@@ -5,7 +5,7 @@ function App() {
 
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/skateshop">
       <div className="App">
         <Main />
    

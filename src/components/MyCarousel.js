@@ -20,17 +20,17 @@ import Image3 from '../imgs/izzy-park-ETqZh_Oe5iE-unsplash.jpg';
 
 const items = [
   {
-    src: '/imgs/jared-tomasek-_j65wtWbMbs-unsplash.jpg',
+    src: '/skateshop/imgs/jared-tomasek-_j65wtWbMbs-unsplash.jpg',
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
   {
-    src: '/imgs/mateo-avila-chinchilla-Yt2bU-A088w-unsplash.jpg',
+    src: '/skateshop/imgs/mateo-avila-chinchilla-Yt2bU-A088w-unsplash.jpg',
     altText: 'Slide 2',
     caption: 'Slide 2'
   },
   {
-    src: '/imgs/izzy-park-ETqZh_Oe5iE-unsplash.jpg', 
+    src: '/skateshop/imgs/izzy-park-ETqZh_Oe5iE-unsplash.jpg', 
     altText: 'Slide 3',
     caption: 'Slide 3'
   }
