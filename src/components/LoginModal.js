@@ -39,7 +39,7 @@ const LoginModal = (props) => {
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>
-            Do Something
+            Login
           </Button>{" "}
           <Button color="secondary" onClick={toggle}>
             Cancel
