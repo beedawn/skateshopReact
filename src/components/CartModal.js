@@ -54,6 +54,12 @@ const CartModal = (props) => {
   ]);
 
   const toggle = () => setModal(!modal);
+  const cartCheckout = () =>{
+    toggle()
+    return(
+      alert("Sent to Server!")
+    )
+  }
 
   return (
     <div>
@@ -73,8 +79,8 @@ const CartModal = (props) => {
           </Form>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>
-            Do Something
+          <Button color="primary" onClick={cartCheckout}>
+            Checkout
           </Button>{" "}
           <Button color="secondary" onClick={toggle}>
             Cancel
