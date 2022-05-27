@@ -7,7 +7,7 @@ function App() {
  
   require('dotenv').config()
   return (
-    <BrowserRouter basename="/skateshop">
+    <BrowserRouter basename="/">
       <div className="App">
         <Main />
    
