@@ -1,6 +1,6 @@
 {
-  "name": "skateshop",
-  "homepage": "http://www.bee.surf/skateshop/",
+  "name": "squash-skateshop",
+  "homepage": "http://www.squashskate.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
