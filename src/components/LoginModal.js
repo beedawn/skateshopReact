@@ -15,8 +15,10 @@ const LoginModal = (props) => {
   const { buttonLabel, title, className } = props;
 
   const [modal, setModal] = useState(false);
+  const [login,setLogin]=useState(false);
 
-  const toggle = () => setModal(!modal);
+  const toggle = () => {setModal(!modal);
+  setLogin(false)};
 
   return (
     <div>
@@ -37,14 +39,16 @@ const LoginModal = (props) => {
             </FormGroup>
           </Form>
         </ModalBody>
+        {login?(<div style={{color:"red", padding:"20px"}}>Login Failed</div>):(<></>)}
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>
+          <Button color="primary" onClick={()=>setLogin(true)}>
             Login
           </Button>{" "}
           <Button color="secondary" onClick={toggle}>
             Cancel
           </Button>
         </ModalFooter>
+     
       </Modal>
     </div>
   );

@@ -1,8 +1,23 @@
-import React from 'react';
-
+import React, {useState} from 'react';
+import * as emailjs from 'emailjs-com';
+import './styles.css';
 
 
 function Contact () {
+    const [send,setSend]=useState(false);
+    const SERVICE_ID= process.env.REACT_APP_SERVICE_ID;
+    const TEMPLATE_ID= process.env.REACT_APP_TEMPLATE_ID;
+    const USER_ID= process.env.REACT_APP_USER_ID;
+  
+function sendEmail(e){
+e.preventDefault();
+console.log(process.env)
+emailjs.sendForm(SERVICE_ID,TEMPLATE_ID,e.target,USER_ID)
+.then((result)=>{setSend(true);},
+(error) => {console.log('error sending email' + error)});
+e.target.reset();
+}
+
 return(
     <div>
        
@@ -72,7 +87,7 @@ return(
                         <div class="row">
                             <div class="card-body">
                                 <div class="col-12">
-                                    <form action="">
+                                    <form onSubmit={(e)=>sendEmail(e)}>
                                         <div class="form-group row">
                                             <label for="firstName" class="col-md-2 col-form-label">First Name</label>
                                             <div class="col-md-10"><input id="firstName" type="text" name="firstName"
@@ -89,8 +104,8 @@ return(
                                             <label for="areaCode" class="col-md-2 col-form-label">Contact Tel.</label>
                                             <div class="col-5 col-md-3"><input type="tel" id="areaCode" name="areaCode"
                                                     placeholder="Area code" class="form-control" />
-                                            </div>
-                                            <div class="col-7"><input type="tel" name="telNum" placeholder="Tel. number"
+                                            </div> <label for="telNum" class="col-md-2 col-form-label">Phone</label>
+                                            <div class="col-5"><input id="telNum" name="telNum" placeholder="Tel. number"
                                                     class="form-control" />
                                             </div>
                                         </div>
@@ -100,21 +115,7 @@ return(
                                                     placeholder="Email" class="form-control" />
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col offset-md-2">
-                                                May we contact you?
-                                                <div class="form-check form-check-inline">
-                                                    <input id="contactYes" type="radio" name="contactRadios" value="yes"
-                                                        class="form-check-input" /> <label for="contactYes"
-                                                        class="form-check-label">Yes</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input id="contactNo" type="radio" name="contactRadios" value="no"
-                                                        class="form-check-input" /> <label for="contactNo"
-                                                        class="form-check-label">No</label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                  
                                         <div class="form-group row"><label for="feedback"
                                                 class="col-md-2  col-form-label">Comment</label>
                                             <div class="col-md-10"><textarea class="form-control" id="comment"
@@ -128,6 +129,7 @@ return(
                                         </div>
 
                                     </form>
+                                    {send ? (<div style={{backgroundColor:"red",color:"white", margin:"auto", width:"15%", padding:"10px", borderRadius:"15px"}}><div style={{margin:"auto"}}>Email sent!</div></div>):(<></>)}
                                 </div>
                             </div>
                         </div>

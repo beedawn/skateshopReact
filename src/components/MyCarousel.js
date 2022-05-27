@@ -74,7 +74,7 @@ const MyCarousel = (props) => {
       <div>
               
         <div className="col-sm-8 col-md-6 col-lg-5 col-xl-3 carousel-overlay logo-bob">
-            <h2> Bob's Skateshop</h2>
+            <h2> Squash Skateshop</h2>
         
     </div>
 

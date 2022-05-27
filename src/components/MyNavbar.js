@@ -50,7 +50,7 @@ const MyNavbar = (props) => {
   return (
     <div className="sticky-top">
       <Navbar color="light" className="bg-dark p-2 " dark expand="lg">
-      <Link to="/" style={style}><NavbarBrand>Bob's Skateshop</NavbarBrand></Link>
+      <Link to="/" style={style}><NavbarBrand>Squash Skateshop</NavbarBrand></Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
