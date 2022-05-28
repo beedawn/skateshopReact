@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch, connect } from "react-redux";
@@ -8,6 +8,9 @@ import {addToCart} from "../state/action-creators/index"
 
 
 function SingleProduct(props) {
+  useEffect(()=>{
+    setItem(false);
+  },[]);
   //Redux
   const store = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -17,7 +20,11 @@ function SingleProduct(props) {
   const cat = props.product;
   const products = props.products;
 
-
+const [item,setItem]=useState(false);
+function updateCart(product){
+  dispatch(addToCart(product));
+  setItem(true);
+}
   // filter products
   const filteredProduct = products.filter(function (el) {
     return el.id === cat;
@@ -80,7 +87,7 @@ function SingleProduct(props) {
                         <button
                           type="button"
                           class="btn btn-primary"
-                          onClick={() => dispatch(addToCart(product))}
+                          onClick={() => updateCart(product)}
                         >
                           Add to Cart
                         </button>
@@ -90,6 +97,7 @@ function SingleProduct(props) {
                         </button>
                       </div>
                     </div>
+                    {item?(<div style={{color:"red", padding:"10px"}}>Added to Cart!</div>):(<></>)}
                   </form>
                 </div>
               ))}

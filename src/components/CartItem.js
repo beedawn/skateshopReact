@@ -25,9 +25,11 @@ const CartItem = ({product, adjustQty, removeFromCart}) => {
 
   }
     return(
+     
         <FormGroup key={product.id}>
+          { console.log(product)}
                 <img
-                  src={product.src}
+                  src={`/${product.src}`}
                   style={{ height: 150 }}
                   alt={product.name}
                 />
