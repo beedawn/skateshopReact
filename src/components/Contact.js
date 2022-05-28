@@ -57,8 +57,9 @@ return(
                         <div class="row">
                             <div class="card-body">
                                 <div class="col-12">
-                                    <a href="https://goo.gl/maps/XVFHjWUYNhLeQiUb9">123 Skateboard Rd
-                                    Pittsburgh, PA 15267</a>
+                                    <a href="https://goo.gl/maps/RnntkCeCz755Nwyk9">1029 Findley Dr
+Pittsburgh, PA, 15221
+</a>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +72,7 @@ return(
                         <div class="row">
                             <div class="card-body">
                                 <div class="col-12">
-                                    <a href="tel:412-888-8888">412-888-8888</a>
+                                    <a href="tel:412-879-1989">412-879-1989</a>
                                 </div>
                             </div>
                         </div>

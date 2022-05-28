@@ -58,7 +58,7 @@ if(filteredProduct.length === 0)
                         <div className="row">
            {filteredProduct.map(({id, name, src, price, category, featured, description}) => 
            <div className="col-lg-4 product-col"> 
-              <Link to={'/product/' + id}> <img className="product-thumbnail" key={id} src={`/skateshop/${src}`} title={name}  /> </Link>
+              <Link to={'/product/' + id}> <img className="product-thumbnail" key={id} src={`/${src}`} title={name}  /> </Link>
                     <div className="product-overlay">{name}</div>
                         <div className="product-overlay-price">{price}</div> 
             </div>)}
