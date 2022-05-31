@@ -24,6 +24,7 @@ const [item,setItem]=useState(false);
 function updateCart(product){
   dispatch(addToCart(product));
   setItem(true);
+  setTimeout(()=>setItem(false),3500) ;
 }
   // filter products
   const filteredProduct = products.filter(function (el) {
