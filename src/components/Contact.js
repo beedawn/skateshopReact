@@ -14,7 +14,7 @@ e.preventDefault();
 console.log(process.env)
 emailjs.sendForm(SERVICE_ID,TEMPLATE_ID,e.target,USER_ID)
 .then((result)=>{setSend(true);},
-(error) => {console.log('error sending email' + error)});
+(error) => {console.log(error)});
 e.target.reset();
 }
 
