@@ -1,5 +1,6 @@
 {
   "name": "skateshop",
+  "homepage": "http://skateshop.bee.engineer/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
