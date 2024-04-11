@@ -1,3 +1,39 @@
-This project has a live version available at http://bee.surf/skateshop
+# eCommerce Webstore "Bob's Skateshop"
 
-This project was created with React and Redux.
+This is a eCommerce front end designed to sell skateboards.
+
+## Description
+
+This application uses React and Redux to manage the users shopping cart. 
+
+## Getting Started
+
+### Dependencies
+
+* node https://nodejs.org/
+
+### Installing
+
+* Run
+  ```
+  npm install
+  ```
+
+### Executing program
+
+* run
+```
+npm start
+```
+
+
+
+## Authors
+
+Bee Schmersal
+
+## Version History
+
+* 0.1
+    * Initial Release
+
